@@ -1,0 +1,78 @@
+
+doctype html
+html
+  head
+    title Express.js + Pug Demo
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    //- Add icon library
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    //- Custom styles for this template
+    link(href="./css/styles.css" rel="stylesheet")
+    
+    block scripts
+      script(src='../app.js')
+  body
+    //- h1 Claim your gif!
+    //- p #{text}
+    //- img(src=`${imgSrc}`)
+
+
+    section.jumbotron.text-center
+      .container
+        h1 Retrieved gif from Giphy API
+        p.lead.text-muted An image says more than a thousand words.
+
+
+
+        //- div.card(style="width: 28rem")
+
+        div.row
+          div.col-md-8.offset-md-2
+            img(class="card-img-top" src=`${imgSrc}` alt="retrieved gif")
+            .card-body
+              h5 Share your gif on your social media.
+              //- a(class="btn btn-primary" href="#") Share
+
+              //- Add font awesome icons
+              a.fa.fa-facebook(href=`http://www.facebook.com/sharer.php?u= ${imgSrc}` class="btn btn-primary")
+              a.fa.fa-linkedin(href=`https://www.linkedin.com/sharing/share-offsite/?url= ${imgSrc}` class="btn btn-primary")
+              a.fa.fa-whatsapp(href=`https://api.whatsapp.com/send?test=text%20 ${imgSrc}` class="btn btn-primary")
+              
+            
+
+
+
+
+        //- p
+        //-   a.btn.btn-primary.m-2(href="#") Main call to action
+        //-   a.btn.btn-secondary.m-2(href="#") Secondary action
+
+
+
+
+
+
+
+
+    //- div.myCard
+    //-   img(class="workers" width="220px", src="#" )
+    //-   h3(class="h3-teams")= "hello"
+    //-   p(class="p-teams")= "hello"
+
+
+
+
+
+//-       <div class="card" style="width: 18rem;">
+//-   <img src="..." class="card-img-top" alt="...">
+//-   <div class="card-body">
+//-     <h5 class="card-title">Card title</h5>
+//-     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//-     <a href="#" class="btn btn-primary">Go somewhere</a>
+//-   </div>
+//- </div>
+
+
+script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")

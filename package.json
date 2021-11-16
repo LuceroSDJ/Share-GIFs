@@ -1,0 +1,21 @@
+{
+  "name": "giphyapi",
+  "version": "1.0.0",
+  "description": "Data retrieval",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Carmen L Sandoval",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pug": "^3.0.2",
+    "request": "^2.88.2"
+  }
+}

@@ -16,6 +16,8 @@ const { resourceUsage } = require("process");
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
+
+//DOcs: Express looks up the files relative to the static directory, so the name of the static directory is not part of the URL.
 app.use(express.static("public"));
 
 // Dependencies -> Pug: a templating engine for Express
@@ -32,7 +34,6 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
     const emotion = req.body.userEmotion;
     var APIkey = process.env.API_KEY;
-    console.log("apiKey", APIkey);
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=" + APIkey + "&limit=1";
 
@@ -55,12 +56,14 @@ app.post("/", function(req, res) {
         response.on("data", function(data) {
             console.log("response.on(data): ", data);   // <Buffer 7b 22 64 61 74 .... >   ...with response.setEncoding('utf8'); we get readable data
             //add up all data chuncks and store them in a var
+            console.log("data", data);  //received several chuncks of data why????????
             body += data;
+            console.log("body += data", body);
         })  //response.on ENDS  
 
         response.on("end", function() {
-            var parsedJson = JSON.parse(body);
-            console.log(parsedJson);
+            var parsedJson = JSON.parse(body);  //outputs a JavaScript object
+            console.log("JSON.parse(body)", parsedJson);
        
             var pickedData = parsedJson.data[0].images.original.url;
             const giphy = {

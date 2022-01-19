@@ -48,6 +48,10 @@ body {
   border-top-right-radius: 0;
 }
 
+form img {
+  border-radius: 20px;
+}
+
 
 /* social media icons */
 /* .fa {
